@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Anime Episode</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelementplayer.min.css">
+    <link rel="stylesheet" href="css/stream.css">
+  </head>
+  <body>
+
+    <div class="group", id="group">
+      <h1 class="title", id="title"></h1>
+
+      <video id="player" width="640" height="360" class="hls-player"
+      controls
+      preload="auto"
+      ></video>
+      
+      <div id="back_next" class="back-next">
+        <button id="back" class="back">Back</button>
+        <h2 class="altitle", id="altitle"></h2>
+        <button id="next" class="next">Next</button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+    <script src="scripts/env.js"></script>
+    <script src="scripts/stream.js"></script>
+  </body>
+</html>

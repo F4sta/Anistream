@@ -1,0 +1,49 @@
+
+:root {
+    --background-color: #191919;
+    --shadow: rgba(0, 238, 255, 0.75);
+    --shadow-hover: rgba(0, 60, 255, 0.75);
+    --border: #8caeff;
+    --p: #727272;
+    --h3: #d6d6d6;
+  }
+  
+@font-face {
+    font-family: "BlackCloverFont";
+    src: url("/anistream/font/BlackCloverFont.ttf");
+}
+body{
+    background-color: #191919;
+}
+.group{
+    display: block;
+    justify-items: center;
+    padding-top: 25vh;
+}
+.search_area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.search_bar {
+    width: 300px;
+    height: 100%;
+    padding: 10px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    color: var(--h3);
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: box-shadow 0.25s linear;
+}
+.search_bar:hover {
+    box-shadow: 0 0px 15px var(--shadow-hover);
+}
+.title {
+    font-size: 98px;
+    font-family: 'BlackCloverFont';
+    color: var(--h3);
+    text-shadow: 0px 0px 20px var(--shadow);
+}

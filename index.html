@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <div class="group">
+            <h1 class="title">Anistream</h1>
+            <div class="search_area" id="search_area">
+                <input class="search_bar" id="search_bar" placeholder="">
+                <div>
+                    <!-- type -->
+                    <!-- status -->
+                    <!-- rated -->
+                    <!-- season -->
+                    <!-- language -->
+                    <!-- sort -->
+                    <!-- genres -->
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script src="anistream/scripts/env.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('search_bar');
+            const animeList = [
+                'One Piece',
+                'Naruto: Shippuden',
+                'Bleach',
+                'Black Clover',
+                'Jujutsu Kaisen',
+                'Demon Slayer',
+                'Boruto: Naruto Next Generations',
+                'Naruto',
+                'Solo Leveling'
+            ];
+        
+            // Animation timing configuration
+            const config = {
+                typeSpeed: 200,    // Time between letters appearing
+                deleteSpeed: 50,   // Time between letters disappearing
+                pauseAfterType: 1000, // Pause after finishing a phrase
+                pauseAfterDelete: 500 // Pause after clearing phrase
+            };
+        
+            let currentIndex = 0;
+            let isAnimating = false;
+        
+            async function typeText(text) {
+                for (let i = 0; i <= text.length; i++) {
+                    input.placeholder = `${text.slice(0, i)}...`;
+                    await new Promise(resolve => setTimeout(resolve, config.typeSpeed));
+                }
+            }
+        
+            async function deleteText(text) {
+                for (let i = text.length; i >= 0; i--) {
+                    input.placeholder = `${text.slice(0, i)}${i > 0 ? '...' : ''}`;
+                    await new Promise(resolve => setTimeout(resolve, config.deleteSpeed));
+                }
+            }
+        
+            async function animatePhrase() {
+                if (isAnimating) return;
+                isAnimating = true;
+        
+                while (true) {
+                    const currentPhrase = animeList[currentIndex];
+                    
+                    // Type current phrase
+                    await typeText(currentPhrase);
+                    await new Promise(resolve => setTimeout(resolve, config.pauseAfterType));
+                    
+                    // Delete current phrase
+                    await deleteText(currentPhrase);
+                    await new Promise(resolve => setTimeout(resolve, config.pauseAfterDelete));
+                    
+                    // Move to next phrase
+                    currentIndex = (currentIndex + 1) % animeList.length;
+                }
+            }
+        
+            // Start animation after brief initial delay
+            setTimeout(animatePhrase, 500);
+        });
+    </script>
+</html>
