@@ -4,28 +4,39 @@
     <meta charset="utf-8" />
     <title>Anime Episode</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelementplayer.min.css">
+    <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
+    <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/stream.css">
   </head>
   <body>
 
-    <div class="group", id="group">
-      <h1 class="title", id="title"></h1>
+    <div class="group" id="group">
+      <h1 class="title" id="title"></h1>
+      <h3 class="altitle" id="altitle"></h3>
 
-      <video id="player" width="640" height="360" class="hls-player"
-      controls
-      preload="auto"
-      ></video>
-      
-      <div id="back_next" class="back-next">
-        <button id="back" class="back">Back</button>
-        <h2 class="altitle", id="altitle"></h2>
-        <button id="next" class="next">Next</button>
+      <div class="video-div">
+        <video-js 
+            id="player"
+            class="vjs-fluid advanced-player"
+            controls
+            preload="auto"
+            poster="https://example.com/poster.jpg"
+            >
+            <p class="vjs-no-js">
+                Please enable JavaScript to view this video.
+            </p>
+        </video-js>
+        
       </div>
-    </div>
+      <div class="ep-div" id="ep-div">
+      </div>
+     
+      
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
     <script src="scripts/env.js"></script>
     <script src="scripts/stream.js"></script>

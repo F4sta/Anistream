@@ -1,62 +1,27 @@
 
-.mejs__container {
-    padding: 10px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 20px var(--shadow);
-    transition: box-shadow 0.25s linear;
-}
-
-.mejs-controls div.mejs-time-rail { width: 400px; }
- 
-.mejs-controls .mejs-time-rail span {
-    position: absolute;
-    display: block;
-    width: 400px;
-    height: 5px;
-    left: 0;
-    bottom: 0;
-    cursor: pointer;
- 
-    -webkit-border-radius: 0px 0px 2px 2px;
-    -moz-border-radius: 0px 0px 2px 2px;
-    border-radius: 0px 0px 2px 2px;
-}
- 
-.mejs-controls .mejs-time-rail .mejs-time-total { background: #999999; }
- 
-.mejs-controls .mejs-time-rail .mejs-time-loaded {
-    width: 0;
-    background: #cccccc;
-}
- 
-.mejs-controls .mejs-time-rail .mejs-time-current {
-    width: 0;
-    background: #8c0000;
-}
-
 
 :root {
     --background-color: #191919;
-    --shadow: rgba(0, 238, 255, 0.75);
-    --shadow-hover: rgba(0, 60, 255, 0.75);
-    --border: #8caeff;
-    --p: #727272;
+    --shadow: rgba(255, 0, 119, 0.75);
+    --shadow-hover: rgba(148, 0, 69, 0.75);
+    --border: rgba(253, 95, 169, 0.75);
+    --dark-grey: #454545;
+    --p: #4c4c4c;
     --h3: #d6d6d6;
-  }
+}
+
 body{
     background-color: #191919;
 }
 
 .group{
-    display: block;
+    display: list-item;
     justify-items: center;
-    padding-top: 25vh;
+
+    margin-top: 5vh;
 }
 
 .title{
-    margin: 0;
     font-size: 32px;
     color: var(--h3);
     padding: 10px;
@@ -64,35 +29,102 @@ body{
 }
 
 .altitle {
-    margin: 0;
+    margin-bottom: 20px;
     font-size: 12px;
-    color: var(--h3);
+    color: #916c82;
     text-shadow: 0px 0px 4px var(--shadow);
 }
-.back-next {
-    width: 640px;
-    display: flex;
-    padding: 20px;
-    align-items: center;
+
+.video-div {
+    width: 854px;
+    height: 480px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 2px 20px var(--shadow);
+    transition: box-shadow 0.25s linear;
+}
+
+/*ScrollBar*/
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+    border-radius: 8px;
   }
-.back, .next {
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #2f2f2f; 
+    border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--dark-grey); 
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--shadow); 
+    border-radius: 8px;
+}
+
+/*ProgressBar*/
+.vjs-control-bar .vjs-load-progress {
+    background: #ffffff;
+}
+ 
+.vjs-control-bar .vjs-play-progress {
+    background: var(--shadow);
+}
+ 
+.vjs-control-bar .vjs-mouse-display {
+    background: #ffb9ef;
+}
+
+.vjs-control-bar .vjs-load-progress {
+    background: #ffffff;
+}
+ /*VolumePaanel*/
+/*CaptionButton*/
+.vjs-menu-item {
+    
+    color: #ff0062;
+}
+.js-focus-visible .vjs-menu li.vjs-selected:hover, .vjs-menu li.vjs-selected, .vjs-menu li.vjs-selected:focus, .vjs-menu li.vjs-selected:hover {
+    background: #ff0062;
+    color: white;
+}
+
+.ep-div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 854px;
+    max-height: 200px;
+    overflow-y: scroll;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid var(--dark-grey);
+    border-radius: 4px;
+    transition: box-shadow 0.25s linear;
+}
+
+.ep-item {
     width: 100px;
-    height: 40px;
-    color: var(--h3);
-    background-color: var(--background-color);
-    border-color: var(--border);
-    box-shadow: 0 0px 15px var(--shadow);
-    transition: box-shadow 0.5s linear;
-    border-radius: 15px;
+    background: #2f2f2f;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px var(--shadow);
 }
-.back:hover, .next:hover {
-    box-shadow: 0 0px 15px var(--shadow-hover);
+
+.ep-item#selected {
+    background: #330013;
 }
-.back{
-    margin-right: auto; 
-    margin-left: 0;
-}
-.next {
-    margin-left: auto; 
-    margin-right: 0;
+
+.ep-text {
+    font-size: 14px;
+    text-align: center;
+    color: var(--shadow);
 }

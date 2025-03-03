@@ -1,13 +1,39 @@
 
 :root {
     --background-color: #191919;
-    --shadow: rgba(0, 238, 255, 0.75);
-    --shadow-hover: rgba(0, 60, 255, 0.75);
-    --border: #8caeff;
-    --p: #727272;
+    --shadow: rgba(255, 0, 119, 0.75);
+    --shadow-hover: rgba(226, 0, 0, 0.75);
+    --border: rgba(253, 95, 250, 0.75);
+    --dark-grey: #454545;
+    --p: #4c4c4c;
     --h3: #d6d6d6;
   }
+
+/*ScrollBar*/
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+    border-radius: 8px;
+  }
   
+/* Track */
+::-webkit-scrollbar-track {
+    background: #2f2f2f; 
+    border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--dark-grey); 
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--shadow); 
+    border-radius: 8px;
+}
+
 @font-face {
     font-family: "BlackCloverFont";
     src: url("/anistream/font/BlackCloverFont.ttf");

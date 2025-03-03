@@ -1,12 +1,39 @@
 
 :root {
   --background-color: #191919;
-  --shadow: rgba(0, 238, 255, 0.75);
-  --shadow-hover: rgba(0, 60, 255, 0.75);
-  --border: #8caeff;
-  --p: #727272;
+  --shadow: rgba(255, 0, 119, 0.75);
+  --shadow-hover: rgba(148, 0, 69, 0.75);
+  --border: rgba(253, 95, 169, 0.75);
+  --dark-grey: #454545;
+  --p: #4c4c4c;
   --h3: #d6d6d6;
 }
+
+/*ScrollBar*/
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+  border-radius: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2f2f2f; 
+  border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--dark-grey); 
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--shadow); 
+  border-radius: 8px;
+}
+
 body {
   background-color: var(--background-color);
 }
@@ -32,8 +59,9 @@ body {
 .episode-card {
   overflow: hidden;
   height: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: 0 2px 8px var(--shadow);
