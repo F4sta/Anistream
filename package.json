@@ -1,0 +1,21 @@
+{
+  "name": "anistream",
+  "version": "1.0.0",
+  "description": "A simple web-app made for my own use. The inspiration from the point i tried watching anime online on my tv and it crashed, so i would make a lightweight anistream web-app.",
+  "main": "package.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/F4sta/Anistream.git"
+  },
+  "keywords": [],
+  "author": "Orbán Kristóf",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/F4sta/Anistream/issues"
+  },
+  "homepage": "https://github.com/F4sta/Anistream#readme"
+}
